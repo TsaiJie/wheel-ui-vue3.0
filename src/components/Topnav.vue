@@ -37,7 +37,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 .topnav {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background: rgb(33, 36, 41);
   color: #fff;
   display: flex;
@@ -71,7 +74,6 @@ export default {
     top: 50%;
     transform: translateY(-50%);
     display: none;
-    cursor: pointer;
   }
   @media (max-width: 500px) {
     > .menu {

@@ -12,10 +12,12 @@ export default {}
 </script>
 <style lang="scss" scoped>
 .topnav {
+  position: relative;
   background: rgb(33, 36, 41);
   color: #fff;
   display: flex;
   padding: 16px;
+  z-index: 10;
   > .logo {
     max-width: 6em;
     // 把其他元素挤到右边去

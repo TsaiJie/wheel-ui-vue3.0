@@ -5,7 +5,7 @@
       <h1>wheel UI</h1>
       <h2>一个简单的 UI 框架</h2>
       <p class="actions">
-        <a href="https://github.com">GitHub</a>
+        <a href="https://github.com/TsaiJie/wheel-ui-vue3.0">GitHub</a>
         <router-link to="/doc">开始</router-link>
       </p>
     </div>

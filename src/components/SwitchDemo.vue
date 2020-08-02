@@ -1,46 +1,11 @@
 <template>
   <div>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
-    <p>switch 文档</p>
+    <Switch></Switch>
   </div>
 </template>
+<script lang="ts">
+import Switch from '../lib/Switch.vue'
+export default {
+  components: { Switch },
+}
+</script>

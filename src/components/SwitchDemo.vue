@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Switch :value="y" @input="y = $event"></Switch>
+    <!--$event 的值是emit的第二个参数 -->
+    <Switch v-model:value="y" />
   </div>
 </template>
 <script lang="ts">

@@ -19,7 +19,9 @@
           </li>
         </ol>
       </aside>
-      <content>主内容</content>
+      <content>
+        <router-view></router-view>
+      </content>
     </div>
   </div>
 </template>

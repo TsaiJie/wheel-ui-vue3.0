@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div class="topnav">
-      <div class="logo"></div>
-      <div class="menu"></div>
-    </div>
+    <Topnav />
     <div class="content">
       <aside>
         <h2>组件列表</h2>
@@ -26,3 +23,30 @@
     </div>
   </div>
 </template>
+<script lang="ts">
+import Topnav from '../components/Topnav.vue'
+export default {
+  components: {
+    Topnav,
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+aside {
+  background: rgb(203, 255, 210);
+  width: 150px;
+  padding: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  > h2 {
+    margin-bottom: 4px;
+  }
+  > ol {
+    > li {
+      padding: 4px 0;
+    }
+  }
+}
+</style>

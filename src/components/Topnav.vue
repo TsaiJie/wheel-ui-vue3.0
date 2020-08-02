@@ -5,7 +5,22 @@
       <li>菜单1</li>
       <li>菜单2</li>
     </ul>
-    <span class="toggleAside"></span>
+    <span class="toggleAside">
+      <svg
+        height="24"
+        class="octicon octicon-three-bars"
+        viewBox="0 0 16 16"
+        version="1.1"
+        width="24"
+        aria-hidden="true"
+        fill="#fff"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"
+        ></path>
+      </svg>
+    </span>
   </div>
 </template>
 <script lang="ts">
@@ -47,6 +62,14 @@ export default {
     }
   }
   > .toggleAside {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    color: #fff;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
   }
   @media (max-width: 500px) {
     > .menu {

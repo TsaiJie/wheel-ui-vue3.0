@@ -1,7 +1,7 @@
 <template>
   <div>
     <!--$event 的值是emit的第二个参数 -->
-    <Switch v-model:value="y" />
+    <Switch v-model:value="show" />
   </div>
 </template>
 <script lang="ts">
@@ -10,8 +10,8 @@ import { ref } from 'vue'
 export default {
   components: { Switch },
   setup() {
-    const y = ref(true)
-    return { y }
+    const show = ref(true)
+    return { show }
   },
 }
 </script>

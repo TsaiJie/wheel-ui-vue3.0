@@ -1,7 +1,12 @@
 <template>
   <button :class="{ checked: value, [`${size}`]: true }" @click="toggle">
-    <span></span>
+    <span class="circle"></span>
+    <span class="innerText" :class="{ checked: value }">
+      <slot name="open" v-if="value"></slot>
+      <slot name="close" v-else></slot>
+    </span>
   </button>
+
   <div>{{ value }} {{ size }}</div>
 </template>
 
@@ -17,7 +22,6 @@ export default {
   },
   setup(props, context) {
     const toggle = () => {
-      console.log(111)
       context.emit('update:value', !props.value)
     }
     return { toggle }
@@ -36,8 +40,18 @@ button {
   background: #bfbfbf;
   border-radius: $h/2;
   cursor: pointer;
-
-  > span {
+  > .innerText {
+    position: absolute;
+    top: 2px;
+    left: 23px;
+    line-height: 20px;
+    font-size: 12px;
+    color: #fff;
+    &.checked {
+      left: 7px;
+    }
+  }
+  > .circle {
     position: absolute;
     top: 2px;
     left: 2px;
@@ -51,12 +65,12 @@ button {
   &.large {
     width: 56px;
     &:active {
-      > span {
+      > .circle {
         width: $h2 + 10px;
       }
     }
     &.checked:active {
-      > span {
+      > .circle {
         // width: $h2 + 4px;
         margin-left: -10px;
       }
@@ -66,26 +80,26 @@ button {
     width: 28px;
     height: 16px;
     border-radius: 8px;
-    > span {
+    > .circle {
       width: 12px;
       height: 12px;
       top: 2px;
       left: 2px;
     }
     &:active {
-      > span {
+      > .circle {
         width: 12 + 2px;
       }
     }
     &.checked:active {
-      > span {
+      > .circle {
         // width: $h2 + 4px;
         margin-left: -2px;
       }
     }
     &.checked {
       background: #1890ff;
-      > span {
+      > .circle {
         left: calc(100% - 12px - 2px);
       }
     }
@@ -96,17 +110,17 @@ button {
 
   &.checked {
     background: #1890ff;
-    > span {
+    > .circle {
       left: calc(100% - #{$h2} - 2px);
     }
   }
   &:active {
-    > span {
+    > .circle {
       width: $h2 + 4px;
     }
   }
   &.checked:active {
-    > span {
+    > .circle {
       // width: $h2 + 4px;
       margin-left: -4px;
     }

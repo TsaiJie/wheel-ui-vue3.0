@@ -1,5 +1,9 @@
 <template>
-  <button :class="{ checked: value, [`${size}`]: true }" @click="toggle">
+  <button
+    :class="{ checked: value, [`${size}`]: true }"
+    @click="toggle"
+    :style="colorStyle"
+  >
     <span class="circle"></span>
     <span class="innerText" :class="{ checked: value }">
       <slot name="open" v-if="value"></slot>
@@ -7,7 +11,7 @@
     </span>
   </button>
 
-  <div>{{ value }} {{ size }}</div>
+  <p>{{ value }} {{ size }} {{ openColor }} {{ closeColor }}</p>
 </template>
 
 <script lang="ts">
@@ -19,12 +23,26 @@ export default {
       type: String,
       default: 'normal',
     },
+    openColor: String,
+    closeColor: String,
   },
   setup(props, context) {
     const toggle = () => {
       context.emit('update:value', !props.value)
     }
     return { toggle }
+  },
+  computed: {
+    colorStyle() {
+      let style = {}
+      if (this.openColor && this.value === true) {
+        style['background-color'] = this.openColor
+      }
+      if (this.closeColor && this.value === false) {
+        style['background-color'] = this.closeColor
+      }
+      return style
+    },
   },
 }
 </script>
@@ -40,6 +58,7 @@ button {
   background: #bfbfbf;
   border-radius: $h/2;
   cursor: pointer;
+  vertical-align: middle;
   > .innerText {
     position: absolute;
     top: 2px;

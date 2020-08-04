@@ -5,30 +5,35 @@
     <Switch v-model:value="show2" />
     <Switch v-model:value="show3" size="small" />
     <Switch v-model:value="show3">
-      <template v-slot:open>
+      <template #open>
         <span>开</span>
       </template>
-      <template v-slot:close>
+      <template #close>
         <span>关</span>
       </template>
     </Switch>
     <Switch v-model:value="show3" size="large">
-      <template v-slot:open>
+      <template #open>
         <span>开启</span>
       </template>
-      <template v-slot:close>
+      <template #close>
         <span>关闭</span>
       </template>
     </Switch>
     <Switch v-model:value="show3" size="large">
-      <template v-slot:open>
+      <template #open>
         <span>ON</span>
       </template>
-      <template v-slot:close>
+      <template #close>
         <span>OFF</span>
       </template>
     </Switch>
-    <Switch v-model:value="show1" size="large" />
+    <Switch
+      v-model:value="show1"
+      size="large"
+      open-color="#39cb58"
+      close-color="#f13e46"
+    />
   </div>
 </template>
 <script lang="ts">

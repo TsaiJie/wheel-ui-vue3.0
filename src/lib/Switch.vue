@@ -10,12 +10,10 @@
       <slot name="close" v-else></slot>
     </span>
   </button>
-
-  <p>{{ value }} {{ size }} {{ openColor }} {{ closeColor }}</p>
 </template>
 
 <script lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 export default {
   props: {
     value: Boolean,
@@ -30,19 +28,17 @@ export default {
     const toggle = () => {
       context.emit('update:value', !props.value)
     }
-    return { toggle }
-  },
-  computed: {
-    colorStyle() {
+    const colorStyle = computed(() => {
       let style = {}
-      if (this.openColor && this.value === true) {
-        style['background-color'] = this.openColor
+      if (props.openColor && props.value === true) {
+        style['background-color'] = props.openColor
       }
-      if (this.closeColor && this.value === false) {
-        style['background-color'] = this.closeColor
+      if (props.closeColor && props.value === false) {
+        style['background-color'] = props.closeColor
       }
       return style
-    },
+    })
+    return { toggle, colorStyle }
   },
 }
 </script>
@@ -50,6 +46,8 @@ export default {
 <style lang="scss" scoped>
 $h: 22px;
 $h2: $h - 4px;
+$sm-w: 28px;
+$sm-h: 16px;
 button {
   position: relative;
   height: $h;
@@ -96,9 +94,9 @@ button {
     }
   }
   &.small {
-    width: 28px;
-    height: 16px;
-    border-radius: 8px;
+    width: $sm-w;
+    height: $sm-h;
+    border-radius: $sm-h/2;
     > .circle {
       width: 12px;
       height: 12px;

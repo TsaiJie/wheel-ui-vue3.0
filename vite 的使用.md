@@ -85,7 +85,7 @@ app.mount('#app')
 4. 添加<router-view>
 5. 添加<router-link>
 
-```vue
+```html
 <template>
   <div>
     vite 导航栏 |
@@ -96,3 +96,4 @@ app.mount('#app')
   <router-view />
 </template>
 ```
+
